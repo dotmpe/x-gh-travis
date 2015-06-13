@@ -1,7 +1,7 @@
 language: c
-branches:
-  only:
-  - master
+#branches:
+#  only:
+#  - master
 env:
 - ENV=
 before_deploy: "echo 'Deploying now'"

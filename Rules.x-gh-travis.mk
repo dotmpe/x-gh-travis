@@ -10,9 +10,10 @@ usage::
 	@echo '# make [$(subst $(space),|,$(STRGT))]'
 
 SRC += Makefile Makefile.default-goals configure Rules.x-gh-travis.mk .travis.yml
+CLN += TODO.list x-gh-travis.tar
 TRGT += TODO.list x-gh-travis.tar
 
-x-gh-travis.tar: $(SRC) $(filter-out *.tar,$(TRGT))
+x-gh-travis.tar: $(SRC) $(filter-out %.tar,$(TRGT))
 	tar cvjf $@ $^
 
 TODO.list: $(SRC)
