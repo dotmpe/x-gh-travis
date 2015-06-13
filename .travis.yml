@@ -1,12 +1,17 @@
 language: c
-
 branches:
   only:
   - master
-
 env:
-# default env is development
-  - ENV=
-#  - ENV=testing
-#  - ENV=production
+- ENV=
+before_deploy: "echo 'Deploying now'"
+deploy:
+  provider: releases
+  api_key:
+    secure: UKzzzfVHzhgsnVT0uGL89oz3EQ+SzgwQfGQ1Ghmkmwh4kkYieEqtI+byHHmQpwKUclrN9jhhJ4J2P3aZaZ1skIgdXglCCxzlEfKSpNzBissOxRfrOqopda0zZWhZFV00aE8ZAa29T6zrQ1lHdN+QoK5PIOJfnZj7evlb/YIxmFsg7qnjHFP9Ynf3dXbgngje0UTNs+iqMMMHrxfyxv0HyDnnIeqfVmKnRnxTOIAk0NRIMehKw+DRw1sCnfITSULnRkqlQsibHXcvgo+W6aw5LCXwvl3ljje/00UuJjY/TbNey1iMqwi1eDWeAhft5PfrR/Oate/iyQfhHyQPfe25Ps0m4fNAcPYX/M423Et9K20EBaWxE/xUtaXVPm4THIYeg+w+9kcRRhuNYK3qBGKooBqQfsO3c19dcNTCoiHAvdw1f0lf9BqQiZCN/Jp95ujRHz2aYZm+vm+cB3dvQmkEbAu60Taw3is0Ucg/IygbuRXXdA5n2hAF4Zgim3bI9rLQh8K4TnPZSuOAS/fuTZ94jyGm5j0VvhrG9chaMJdmsqouwT2OLoNCrymKERgvvTAnL3gqyUqI99RpBkWLtTtY9yGQHwWV5cCd0sZNjAIVMKNUz6A9HYv6AV6Y2XRj7eVADacQeyQMzeiGr3mkQ6ziUlzfzSQ6N6HT+qA7BR0qfH4=
+  file: x-gh-travis.tar
+  on:
+    repo: dotmpe/x-gh-travis
+    tags: true
+before_deploy: "echo 'Deployment done'"
 

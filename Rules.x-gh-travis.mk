@@ -12,8 +12,8 @@ usage::
 SRC += Makefile Makefile.default-goals configure Rules.x-gh-travis.mk .travis.yml
 TRGT += TODO.list x-gh-travis.tar
 
-x-gh-travis.tar: $(SRC)
-	tar cvjf $@ $(SRC)
+x-gh-travis.tar: $(SRC) $(filter-out *.tar,$(TRGT))
+	tar cvjf $@ $^
 
 TODO.list: $(SRC)
 	grep -srI 'TODO\|FIXME\|XXX' $^ | grep -v 'grep..srI..TODO' | grep -v 'TODO.list' > $@
