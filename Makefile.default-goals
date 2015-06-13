@@ -1,13 +1,13 @@
 
 ifeq ($(MAKECMDGOALS),)
 ifeq ($(ENV),development)
-DEFAULT ?= build
+DEFAULT ?= 
 endif
 ifeq ($(ENV),testing)
-DEFAULT ?= build
+DEFAULT ?= build test
 endif
 ifeq ($(ENV),production)
-DEFAULT ?= build
+DEFAULT ?= build install check
 endif
 endif
 

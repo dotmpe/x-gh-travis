@@ -4,9 +4,11 @@ BASE                := $(shell cd $(DIR);pwd)
 
 HOST                := $(shell hostname|tr '.' '-')
 
-APP_ID              := x-gh-travis
-VERSION              = 0.0.4-test
 ENV                 ?= development
+
+APP_ID              := x-gh-travis
+
+VERSION             := 0.0.4-master# x-gh-travis
 
 # BSD weirdness
 echo = /bin/echo

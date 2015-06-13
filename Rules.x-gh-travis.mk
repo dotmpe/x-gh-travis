@@ -1,20 +1,21 @@
 
-# TODO: create releases using travis, see also GIT publish
-# TODO: use $GH_TAG_TOKEN to tag succesful builds with the current release version
+# Build a tar from the local files. Tagging the build causes Travis to
+# upload the package to the github releases.
 
 empty :=
 space := $(empty) $(empty)
 usage::
 	@echo 'usage:'
-	@echo '# npm [info|update|test]'
 	@echo '# make [$(subst $(space),|,$(STRGT))]'
 
-SRC += Makefile Makefile.default-goals configure Rules.x-gh-travis.mk .travis.yml
-CLN += TODO.list x-gh-travis.tar
-TRGT += TODO.list x-gh-travis.tar
+SRC += Makefile Rules.$(APP_ID).mk .travis.yml \
+			 Makefile.default-goals
+CLN += TODO.list $(APP_ID)-$(VERSION).tar
+TRGT += TODO.list $(APP_ID)-$(VERSION).tar
 
-x-gh-travis.tar: $(SRC) $(filter-out %.tar,$(TRGT))
+$(APP_ID)-$(VERSION).tar: $(SRC) $(filter-out %.tar,$(TRGT))
 	tar cvjf $@ $^
+
 
 TODO.list: $(SRC)
 	grep -srI 'TODO\|FIXME\|XXX' $^ | grep -v 'grep..srI..TODO' | grep -v 'TODO.list' > $@
