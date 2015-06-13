@@ -1,0 +1,12 @@
+language: c
+
+branches:
+  only:
+  - master
+
+env:
+# default env is development
+  - ENV=
+#  - ENV=testing
+#  - ENV=production
+

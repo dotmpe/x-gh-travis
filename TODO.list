@@ -1,0 +1,3 @@
+configure:# XXX: debug prints (local) env
+Rules.x-gh-travis.mk:# TODO: create releases using travis, see also GIT publish
+Rules.x-gh-travis.mk:# TODO: use $GH_TAG_TOKEN to tag succesful builds with the current release version
