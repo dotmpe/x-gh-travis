@@ -8,7 +8,7 @@ ENV                 ?= development
 
 APP_ID              := x-gh-travis
 
-VERSION             := 0.0.4# x-gh-travis
+VERSION             := 0.0.5-master# x-gh-travis
 
 # BSD weirdness
 echo = /bin/echo
