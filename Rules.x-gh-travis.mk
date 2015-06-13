@@ -18,7 +18,7 @@ $(APP_ID)-$(VERSION).tar: $(SRC) $(filter-out %.tar,$(TRGT))
 
 
 TODO.list: $(SRC)
-	grep -srI 'TODO\|FIXME\|XXX' $^ | grep -v 'grep..srI..TODO' | grep -v 'TODO.list' > $@
+	-grep -srI 'TODO\|FIXME\|XXX' $^ | grep -v 'grep..srI..TODO' | grep -v 'TODO.list' > $@
 
 STRGT += release
 release: M=Release

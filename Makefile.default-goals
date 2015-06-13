@@ -1,7 +1,7 @@
 
 ifeq ($(MAKECMDGOALS),)
 ifeq ($(ENV),development)
-DEFAULT ?= 
+DEFAULT ?= build
 endif
 ifeq ($(ENV),testing)
 DEFAULT ?= build test
