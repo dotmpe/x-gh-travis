@@ -13,5 +13,5 @@ deploy:
   on:
     repo: dotmpe/x-gh-travis
     tags: true
-before_deploy: "echo 'Deployment done'"
+after_deploy: "echo 'Deployment done'"
 
