@@ -5,7 +5,7 @@ BASE                := $(shell cd $(DIR);pwd)
 HOST                := $(shell hostname|tr '.' '-')
 
 APP_ID              := x-gh-travis
-VERSION              = 0.0.3
+VERSION              = 0.0.4-test
 ENV                 ?= development
 
 # BSD weirdness
