@@ -1,4 +1,5 @@
-script: make
+script: whoami && groups && make && env
+
 branches:
 
 env:
