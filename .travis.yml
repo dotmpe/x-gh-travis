@@ -1,6 +1,9 @@
 script: whoami && groups && make && env
 
 branches:
+  only:
+  - test
+  - '/^[0-9]*\.[0-9]*\.[0-9]*/'
 
 env:
 - ENV=
